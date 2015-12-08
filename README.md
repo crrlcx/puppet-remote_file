@@ -155,6 +155,11 @@ can specify these either as part of the `proxy` URI, or separately using the
   the proxy.
 * `proxy_password`: If using a proxy, the password to use to authenticate to
   the proxy.
+* `headers`: Hash containing extra HTTP headers (can be
+  overriden by other conflicting parameters)
+* `owner`: owner attribute of the file. See the File type for details.
+* `group`: group attribute of the file. See the File type for details.
+* `mode`: mode attribute of the file. See the File type for details.
 
 ### Provider: ruby
 
@@ -164,7 +169,9 @@ using Net::HTTP from Ruby's standard library.
 ## Limitations
 
 Currently only http, https, and file URI sources are supported by the default
-ruby provider.
+ruby provider. 
+
+Ruby versions older than 1.9 are not supported due to lack of certain features.
 
 ## License
 
